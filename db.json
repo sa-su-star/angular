@@ -1,0 +1,34 @@
+{
+  "newUser": [
+    {
+      "name": "User Two",
+      "userName": "Sameh Mohamed",
+      "email": "Egypt-Cairo",
+      "address": "Shgardi app",
+      "phone": 168165210,
+      "company": "Shgardi",
+      "job": "Courier",
+      "id": 3
+    },
+    {
+      "name": "User One",
+      "userName": "Sameh Muhammed",
+      "email": "samehznaty@gmail.com",
+      "address": "Egypt-Cairo-Helwan",
+      "phone": 1145127921,
+      "company": "Shgardi",
+      "job": "Customer",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

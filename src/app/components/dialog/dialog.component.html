@@ -1,0 +1,96 @@
+<h1 mat-dialog-title>Add new user</h1>
+<div mat-dialog-content>
+  <form [formGroup]="userForm">
+    <!-- Name -->
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput placeholder="Input your name" />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input
+          formControlName="userName"
+          matInput
+          placeholder="Input your user name"
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <!-- Use Validation -->
+        <input
+          formControlName="email"
+          matInput
+          type="email"
+          placeholder="Input your Email"
+        />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input
+          formControlName="address"
+          matInput
+          placeholder="Input your Address"
+        />
+      </mat-form-field>
+    </p>
+    <!-- Phone  -->
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input
+          formControlName="phone"
+          matInput
+          type="number"
+          placeholder="Input your phone"
+        />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Company</mat-label>
+        <!--create Droplist with 3 or more companies -->
+        <mat-select formControlName="company" placeholder="Companies">
+          <mat-option *ngFor="let company of companies" [value]="company"
+            >{{ company }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <!--Job-->
+    <label id="job-radio">Pick your Job</label>
+    <mat-radio-group
+      formControlName="job"
+      aria-labellebdy="job-radio"
+      class="job-radio"
+    >
+      <mat-radio-button
+        class="radio-button"
+        *ngFor="let job of jobs"
+        [value]="job"
+      >
+        {{ job }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </form>
+  <!-- end of Form -->
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button mat-dialog-close color="warn">Close</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="createUser()"
+  >
+    {{ actionBtn }}
+  </button>
+</div>
